@@ -357,7 +357,7 @@ class ABNF(object):
         _d = array.array("B", data)
         for i in range(len(_d)):
             _d[i] ^= _m[i % 4]
-        return _d.tostring()
+        return _d.tobytes()
 
 
 class WebSocket(object):
