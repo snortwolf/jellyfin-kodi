@@ -323,7 +323,7 @@ def get_sync():
 
     try:
         with open(os.path.join(ADDON_DATA, 'sync.json'), 'rb') as infile:
-            sync = json.load(infile, encoding='utf-8')
+            sync = json.load(infile)
     except Exception:
         sync = {}
 
@@ -356,12 +356,12 @@ def get_credentials():
 
     try:
         with open(os.path.join(ADDON_DATA, 'data.json'), 'rb') as infile:
-            credentials = json.load(infile, encoding='utf8')
+            credentials = json.load(infile)
     except Exception:
 
         try:
             with open(os.path.join(ADDON_DATA, 'data.txt'), 'rb') as infile:
-                credentials = json.load(infile, encoding='utf-8')
+                credentials = json.load(infile)
                 save_credentials(credentials)
 
             xbmcvfs.delete(os.path.join(ADDON_DATA, 'data.txt'))
